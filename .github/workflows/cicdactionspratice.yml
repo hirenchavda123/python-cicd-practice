@@ -1,0 +1,8 @@
+name: django CI/CD Actions Practice
+on: [ push ]
+jobs:
+    CI-CD:
+        runs-on: ubuntu-latest
+        steps:
+            - name: First practice action
+              run: echo "Hello World! This is my first practice action in GitHub CI/CD workflow."

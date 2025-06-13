@@ -1,0 +1,30 @@
+name: Test case
+on: [push,workflow_dispatch]
+jobs:
+    testCase:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run test case
+              uses: actions/checkout@v4
+            
+            - name: Set up python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'
+            
+            - name: Print python verion
+              run: python --version
+            
+            - name: Install pip
+              run: |
+                echo "Install pip..."
+                python -m pip install --upgrade pip
+
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+                
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+            
+            - name: Run Django tests
+              run: python manage.py test crudapp

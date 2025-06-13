@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title %}
+<title>Landing Page</title>
+{% endblock %} {% block content %}
+<div
+  class="min-h-screen flex flex-col justify-between bg-gray-50 text-gray-800"
+>
+  {% block header %}
+  <header class="text-center py-10 bg-white shadow">
+    <h1 class="text-4xl font-bold text-blue-700">Welcome to Our Website</h1>
+    <p class="mt-2 text-lg text-gray-600">
+      Your one-stop solution for everything.
+    </p>
+  </header>
+  {% endblock %} {% block body %}
+  <main
+    class="flex-grow flex flex-col justify-center items-center px-4 text-center"
+  >
+    <p class="text-xl mb-4">
+      Discover features, tools, and services tailored just for you.
+    </p>
+    <p class="text-gray-600 mb-8">
+      Click the button below to get started with your journey.
+    </p>
+    Tap here to
+    <a
+      href="/login/"
+      class="bg-blue-600 hover:bg-blue-700 text-red px-6 py-3 rounded-full font-semibold flex items-center gap-2 transition duration-200"
+    >
+      Get Started
+      <i data-lucide="arrow-right"></i>
+    </a>
+  </main>
+  {% endblock %} {% block footer %}
+  <footer class="bg-white py-6 text-center text-gray-500 text-sm border-t">
+    &copy; 2025 ABC Company. All rights reserved.
+  </footer>
+  {% endblock %}
+</div>
+{% endblock %}

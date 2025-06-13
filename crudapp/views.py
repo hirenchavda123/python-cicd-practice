@@ -5,6 +5,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
+def landing_page_view(request):
+    return render(request, "landingpage.html")
+
+
 def login_view(request):
     if request.method == "POST":
         data = request.POST
@@ -49,6 +53,6 @@ def signup_view(request):
     return render(request, "signup.html")
 
 
-@login_required(login_url='/login/')
+@login_required(login_url="/login/")
 def home_view(request):
     return render(request, "home.html")

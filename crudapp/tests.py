@@ -1,8 +1,8 @@
 def add_funtion(a,b):
     if type(a) is int:
         print("a is integer")
-    # else:
-    #     print("a is not integer")
+    else:
+        print("a is not integer")
     
     if type(b) is int:
         print("b is integer")

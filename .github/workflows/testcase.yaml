@@ -12,9 +12,6 @@ jobs:
               with:
                 python-version: '3.13'
             
-            - name: Print python verion
-              run: python --version
-            
             - name: Install pip
               run: |
                 echo "Install pip..."
@@ -25,3 +22,22 @@ jobs:
             
             - name: Run Django tests
               run: python manage.py test crudapp
+    multiJobs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Running multi jobs
+              uses: actions/checkout@v4
+            
+            - name: Set up python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'
+            
+            - name: Install pip
+              run: python -m pip install --upgrade pip
+            
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+            
+            - name: print message
+              run: echo "This is multi jobs practice in GitHub CI/CD workflow."

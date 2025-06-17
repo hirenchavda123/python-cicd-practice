@@ -13,25 +13,29 @@ jobs:
             - name: Run test case
               uses: actions/checkout@v4
             
+              
+            - name: Set up python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'
+                
+            - name: Install pip
+              run: |
+                echo "Install pip..."
+                python -m pip install --upgrade pip
+                
             - name: Set up cache
               uses: actions/cache@v4
               with:
                 path:  ~/.cache/pip
                 key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-
-            - name: Set up python
-              uses: actions/setup-python@v5
-              with:
-                python-version: '3.13'
-            
-            - name: Install pip
-              run: |
-                echo "Install pip..."
-                python -m pip install --upgrade pip
-
+                
             - name: Install dependencies
               run: pip install -r requirements.txt
             
+            - name: Run Django tests
+              run: python manage.py test crudapp
+
             - name: Upload Artifact
               uses: actions/upload-artifact@v4
               with:
@@ -50,6 +54,6 @@ jobs:
               with:
                 name: artifact-file
                 path: artifact
-                
+
             - name: Print Downloaded Artifact
               run: echo "Artifact downloaded successfully!"

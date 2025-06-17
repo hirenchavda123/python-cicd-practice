@@ -1,5 +1,5 @@
 name: django CI/CD Actions Practice
-on: [ push ]
+on: [workflow_dispatch]
 jobs:
     CI-CD:
         runs-on: ubuntu-latest

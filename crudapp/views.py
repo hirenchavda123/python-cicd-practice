@@ -28,6 +28,10 @@ def login_view(request):
 
 def signup_view(request):
     if request.method == "POST":
+        try:
+            print('try: ===>>')
+        except:
+            print('except: ==>>')
         data = request.POST
         email = data.get("email")
         username = data.get("username")

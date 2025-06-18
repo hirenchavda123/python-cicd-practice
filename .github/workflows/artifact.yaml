@@ -1,9 +1,9 @@
 name: Artifact Workflow
 on:
-    push:
-        branches:
-            - main
-            - development
+    # push:
+    #     branches:
+    #         - main
+    #         - development
     workflow_dispatch:
 
 jobs:

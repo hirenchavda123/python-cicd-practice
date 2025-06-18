@@ -1,5 +1,5 @@
 name: Clone repo at runner matchin and deploy dist
-on: [push,workflow_dispatch ]
+on: [workflow_dispatch]
 jobs:
     deployDist:
         runs-on: ubuntu-latest
